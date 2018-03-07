@@ -12,7 +12,7 @@ class App {
     treeTwo.map(line => console.log(line));
   }
 
-  getTree(baseWidth, baseCharacter, leafCharacter) {
+  getTree(baseWidth: number, baseCharacter: string, leafCharacter: string): string[] {
     let layers = this.getLayers(baseWidth)
       .map(layer => this.getTreeLayer(layer, leafCharacter, baseWidth));
 
@@ -20,7 +20,7 @@ class App {
     return layers
   }
 
-  getLayers(baseWidth) {
+  getLayers(baseWidth: number): number[] {
     let layers = [];
     const layersSource = range(1, baseWidth);
 
@@ -34,7 +34,7 @@ class App {
   }
 
 
-  getTreeLayer(length, character, baseWidth): string {
+  getTreeLayer(length: number, character: string, baseWidth: number): string {
     let layer = "";
     const spaceCharacter = " ";
     const indentation = this.getIndentation(baseWidth, length);
@@ -47,7 +47,7 @@ class App {
     return layer;
   }
 
-  getIndentation(baseWidth, layerWidth) {
+  getIndentation(baseWidth: number, layerWidth: number): number {
     return (baseWidth - layerWidth)/2;
   }
 
