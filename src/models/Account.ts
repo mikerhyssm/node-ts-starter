@@ -1,7 +1,7 @@
 export default class Account {
   balance: number
 
-  constructor(initialBalance: number = 0) {
+  constructor(public id: number, public name: string, initialBalance: number = 0) {
     this.balance = initialBalance;
   }
 
@@ -11,7 +11,7 @@ export default class Account {
 
   withdraw(amount: number) {
     if(amount <= this.balance) {
-      this.balance -=amount;
+      this.balance -= amount;
 
     } else {
       throw(new Error('account is overdrawn'));
