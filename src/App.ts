@@ -1,9 +1,7 @@
-class App {
+export class App {
 
   constructor () {
 
   }
 
 }
-
-export default new App();
